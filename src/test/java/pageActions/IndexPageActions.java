@@ -18,12 +18,12 @@ public class IndexPageActions {
 		PageFactory.initElements(TestBase.getDriver(), indexPageLocators);
 	}
 	
-	public void indexPageInfo() {
+	public void indexPageInfo(String username, String password) {
 		
-		CommonActions.sendKeys(indexPageLocators.username, "username");
+		CommonActions.sendKeys(indexPageLocators.username, username);
 		CommonActions.report("Username is provided");
 		
-		CommonActions.sendKeys(indexPageLocators.password, "abc123");		
+		CommonActions.sendKeys(indexPageLocators.password, password);		
 		CommonActions.report("Password is provided");
 		
 		String val = CommonActions.getText(indexPageLocators.nxtPageLink);
