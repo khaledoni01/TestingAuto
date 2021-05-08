@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="baseURL" value="file:///C:/Users/khale/OneDrive/Desktop/Misc/KN%20IT%20Solution/Automation/WebPage/index.html"/>
+  <listeners>
+    <listener class-name="pageTest.TestListenerClass"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="pageTest.TestClass">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="indexPageTest"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- pageTest.TestClass -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

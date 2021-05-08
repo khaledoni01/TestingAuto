@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+  <groups>
+  	<run>
+  	  <include name="test" />
+  	</run>
+  </groups>  
+  
+  <listeners>
+  	<listener class-name="pageTest.TestListenerClass"></listener>
+  </listeners>
+	
+  <parameter name="baseURL" value="file:///C:/Users/khale/OneDrive/Desktop/Misc/KN%20IT%20Solution/Automation/WebPage/index.html" />
+  
+  <test name="Test">
+
+	<classes>
+		<class name="pageTest.TestClass" />
+	</classes>
+	
+  </test>   
+  
+</suite>
