@@ -1,8 +1,5 @@
 package pageTest;
 
-import java.lang.annotation.Retention;
-
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
@@ -31,11 +33,19 @@ public class TestBase {
 	}
 		
 	@BeforeSuite(alwaysRun = true)
-	@Parameters("baseURL")
-	public void beforeSuite(String baseURL) {
+	@Parameters({"baseURL" ,"browserName"})
+	public void beforeSuite(String baseURL, String browserName) {
 		TestBase.setupExtentReport();
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browser/chromedriver_89.exe");
-		driver = new ChromeDriver();
+		
+		if(browserName.equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browser/chromedriver_89.exe");
+			driver = new ChromeDriver();
+		}
+		else if(browserName.equalsIgnoreCase("Firefox")) {
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/browser/firefox_89.exe");
+			driver = new FirefoxDriver();
+		}
+		
 		driver.get(baseURL);
 //		driver.manage().window().maximize();
 		TestBase.indexPageActions = TestBase.indexPageActionsObject();

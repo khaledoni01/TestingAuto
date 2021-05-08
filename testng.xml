@@ -14,6 +14,7 @@
   </listeners>
 	
   <parameter name="baseURL" value="file:///C:/Users/khale/OneDrive/Desktop/Misc/KN%20IT%20Solution/Automation/WebPage/index.html" />
+  <parameter name="browserName" value="chrome" />
   
   <test name="Test">
 
